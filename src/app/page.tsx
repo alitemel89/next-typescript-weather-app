@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import InformationPanel from "@/components/InformationPanel";
 import Sidebar from "@/components/Sidebar";

@@ -1,0 +1,1 @@
+"https://marine-api.open-meteo.com/v1/marine?latitude=-28.00&longitude=153.43&hourly=swell_wave_height,swell_wave_direction,swell_wave_period,swell_wave_peak_period"

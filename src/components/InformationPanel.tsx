@@ -6,4 +6,4 @@ function InformationPanel() {
   )
 }
 
-export default InformationPanel
+export default InformationPanel;
