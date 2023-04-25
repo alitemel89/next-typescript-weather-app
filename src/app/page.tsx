@@ -1,10 +1,17 @@
+"use client";
+
+import InformationPanel from "@/components/InformationPanel";
+import Sidebar from "@/components/Sidebar";
 import WeatherMap from "@/components/WeatherMap";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Weather Map</h1>
-      <WeatherMap />
+    <div className="md:flex"> 
+      <Sidebar />
+      <div className="flex flex-col w-full">
+        <InformationPanel />
+        <WeatherMap />
+      </div>
     </div>
   );
 }
