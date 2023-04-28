@@ -2,12 +2,13 @@
 
 import React from "react";
 import CityPicker from "./CityPicker";
+import { WeatherData } from "@/utils/fetchWeatherData";
 
 type Props = {
   city: string;
   lat: string;
   long: string;
-  results: any;
+  results: WeatherData | null;
 };
 
 function InformationPanel({ city, lat, long, results }: Props) {
