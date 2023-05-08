@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export interface WeatherData {
   latitude: number;
   longitude: number;
@@ -39,12 +37,13 @@ export interface Hourly {
 }
 
 export const fetchWeatherData = async (url: string) => {
-  try {
-    const response = await axios.get(url);
-    const data = response.data;
-    return data;
-  } catch (error) {
-    console.error(error);
-    return null;
+  const res = await fetch(url);
+
+  // Recommendation: handle errors
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
   }
+
+  return res.json();
 };

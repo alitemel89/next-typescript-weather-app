@@ -1,12 +1,15 @@
 import CalloutCard from "@/components/CalloutCard";
 import InformationPanel from "@/components/InformationPanel";
-import SwellChart from "@/components/SwellChart";
+import TempChart from "@/components/TempChart";
+import WaveChart from "@/components/WaveChart";
 import { fetchMarineData } from "@/utils/fetchMarineData";
 import { fetchWeatherData } from "@/utils/fetchWeatherData";
 
 interface Props {
   params: { lat: string; long: string; city: string };
 }
+
+export const revalidate = 60;
 
 async function WeatherPage({ params: { lat, long, city } }: Props) {
 
@@ -18,20 +21,21 @@ async function WeatherPage({ params: { lat, long, city } }: Props) {
 
 
   const marineResults = await fetchMarineData(marineUrl);
-  // console.log(marineResults);
   const weatherResults = await fetchWeatherData(weatherUrl);
-  console.log(weatherResults)
+  // console.log(marineResults)
 
   return (
-    <div className="flex">
+    <div className="md:flex">
       <InformationPanel
         city={decodeURI(city)}
         lat={lat}
         long={long}
         results={weatherResults}
       />
-      <div className="w-full px-8">
+      <div className="w-full px-8 my-2">
         <CalloutCard message="This is where GPT-4 Summary will go!" />
+        <TempChart results={weatherResults} />
+        <WaveChart results={marineResults} />
       </div>
     </div>
   );

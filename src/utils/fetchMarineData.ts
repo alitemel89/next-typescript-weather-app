@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export interface MarineData {
   generationtime_ms: number;
   hourly: HourlyData;
@@ -26,13 +24,15 @@ export interface HourlyData {
   swell_wave_period: number[];
   swell_wave_peak_period: number[];
 }
+
 export const fetchMarineData = async (url: string) => {
-  try {
-    const response = await axios.get(url);
-    const data: MarineData = response.data;
-    return data;
-  } catch (error) {
-    console.error(error);
-    return null;
+  const res = await fetch(url);
+
+  // Recommendation: handle errors
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
   }
+
+  return res.json();
 };

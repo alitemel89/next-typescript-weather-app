@@ -18,7 +18,7 @@ function InformationPanel({ city, lat, long, results }: Props) {
     p-10 max-w-2xl min-h-screen"
     >
       <div>
-        <h1 className="text-5xl text-white">{decodeURI(city)}</h1>
+        <h1 className="text-5xl text-white py-4">{decodeURI(city)}</h1>
         <p className="text-gray-200 text-sm">
           Long/Lat: {long}, {lat}
         </p>
