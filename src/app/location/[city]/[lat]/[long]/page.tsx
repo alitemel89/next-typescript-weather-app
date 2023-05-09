@@ -22,7 +22,7 @@ async function WeatherPage({ params: { lat, long, city } }: Props) {
 
   const marineResults = await fetchMarineData(marineUrl);
   const weatherResults = await fetchWeatherData(weatherUrl);
-  console.log(weatherResults.current_weather);
+
   return (
     <div className="md:flex">
       <InformationPanel
