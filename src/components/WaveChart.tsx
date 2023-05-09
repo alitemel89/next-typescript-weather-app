@@ -28,11 +28,11 @@ function WaveChart({ results }: Props) {
 
   return (
     <Card className="my-2">
-      <Title>Swell Wave Height & Period</Title>
+      <Title>Swell Wave Height & Period 🌊</Title>
       <AreaChart
         data={data}
         showLegend
-        className="mt-6"
+        className="mt-6 h-48"
         index="time"
         categories={["Wave Height (m)", "Wave Period (sec)"]}
         colors={["teal", "indigo"]}

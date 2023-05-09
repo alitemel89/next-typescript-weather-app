@@ -3,6 +3,8 @@
 import React from "react";
 import CityPicker from "./CityPicker";
 import { WeatherData } from "@/utils/fetchWeatherData";
+import weatherCodeToString from "../../lib/weatherCodeToString";
+import Image from "next/image";
 
 type Props = {
   city: string;
@@ -44,16 +46,39 @@ function InformationPanel({ city, lat, long, results }: Props) {
 
         <div className="my-auto">
           <p className="text-white font-bold text-lg">
-            {new Date().toLocaleTimeString("en-GB", {
-              hour: "numeric",
-              minute: "numeric",
-              hour12: true,
-            }).toUpperCase()}
+            {new Date()
+              .toLocaleTimeString("en-GB", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: false
+              })
+              .toUpperCase()}
           </p>
         </div>
       </div>
 
-      <div>{results?.current_weather?.temperature}</div>
+      <div className="flex items-center justify-between space-x-10 text-white">
+        <div>
+          <Image
+            src={`https://openweathermap.org/img/wn/${
+              weatherCodeToString[results?.current_weather.weathercode!].icon
+            }@2x.png`}
+            alt={
+              weatherCodeToString[results?.current_weather.weathercode!].label
+            }
+            width={75}
+            height={75}
+          />
+          <div>
+            <p className="text-6xl font-semibold">
+              {results?.current_weather.temperature.toFixed(1)}°C
+            </p>
+            <p>
+              {weatherCodeToString[results?.current_weather.weathercode!].label}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

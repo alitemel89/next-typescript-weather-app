@@ -57,6 +57,7 @@ function CityPicker() {
         value={selectedCountry}
         onChange={handleCountryChange}
         options={options}
+        instanceId="1"
       />
 
       {selectedCountry && (

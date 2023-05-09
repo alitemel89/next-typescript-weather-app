@@ -28,11 +28,11 @@ function TempChart({ results }: Props) {
 
   return (
     <Card className="my-2">
-      <Title>Temperature & UV Index</Title>
+      <Title>Temperature & UV Index ☀️</Title>
       <AreaChart
         data={data}
         showLegend
-        className="mt-6"
+        className="mt-6 h-48"
         index="time"
         categories={["Temperature (C)", "UV Index"]}
         colors={["yellow", "rose"]}
