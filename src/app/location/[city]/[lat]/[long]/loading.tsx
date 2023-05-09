@@ -1,4 +1,4 @@
-import { SpeakerWaveIcon, SunIcon } from "@heroicons/react/24/solid";
+import { SunIcon } from "@heroicons/react/24/solid";
 import React from "react";
 
 function loading() {
@@ -7,7 +7,7 @@ function loading() {
       className="bg-gradient-to-br from-indigo-700 to-blue-950 min-h-screen
     flex flex-col items-center justify-center text-slate-300"
     >
-      <SpeakerWaveIcon className="animate-spin h-24 w-24" />
+      <SunIcon className="animate-spin h-24 w-24" />
       <h1 className="text-6xl font-bold text-center mb-10 animate-pulse">
         Loading Weather and Wave Information
       </h1>
