@@ -13,7 +13,7 @@ export default function Home() {
       <Card className="mx-auto max-w-4xl">
         <Text className="text-6xl font-bold text-center mb-10">Weather AI</Text>
         <Subtitle className="text-xl text-center">
-          Powered by OpenAI, Next.js 13.3, Tailwind CSS, Tremor 2.0
+          Powered by OpenAI, Next.js 13.4, Tailwind CSS, Tremor 2.0
         </Subtitle>
         <Divider className="my-10" />
         <Card className="bg-gradient-to-r from-indigo-700 to-blue-900">

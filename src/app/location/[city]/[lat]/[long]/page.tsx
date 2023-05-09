@@ -1,5 +1,6 @@
 import CalloutCard from "@/components/CalloutCard";
 import InformationPanel from "@/components/InformationPanel";
+import Map from "@/components/Map";
 import TempChart from "@/components/TempChart";
 import WaveChart from "@/components/WaveChart";
 import { fetchMarineData } from "@/utils/fetchMarineData";
@@ -35,6 +36,7 @@ async function WeatherPage({ params: { lat, long, city } }: Props) {
           <TempChart results={weatherResults} />
           <WaveChart results={marineResults} />
         </div>
+        <Map lat={lat} long={long} city={decodeURI(city)}/>
       </div>
     </div>
   );
